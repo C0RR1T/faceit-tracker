@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/faceit-tracker/static/css/main.7d180cbf.chunk.css",
+    "main.js": "/faceit-tracker/static/js/main.8919494b.chunk.js",
+    "main.js.map": "/faceit-tracker/static/js/main.8919494b.chunk.js.map",
+    "runtime-main.js": "/faceit-tracker/static/js/runtime-main.ee53e5f5.js",
+    "runtime-main.js.map": "/faceit-tracker/static/js/runtime-main.ee53e5f5.js.map",
+    "static/js/2.45c466fc.chunk.js": "/faceit-tracker/static/js/2.45c466fc.chunk.js",
+    "static/js/2.45c466fc.chunk.js.map": "/faceit-tracker/static/js/2.45c466fc.chunk.js.map",
+    "static/js/3.d860d046.chunk.js": "/faceit-tracker/static/js/3.d860d046.chunk.js",
+    "static/js/3.d860d046.chunk.js.map": "/faceit-tracker/static/js/3.d860d046.chunk.js.map",
+    "index.html": "/faceit-tracker/index.html",
+    "static/css/main.7d180cbf.chunk.css.map": "/faceit-tracker/static/css/main.7d180cbf.chunk.css.map",
+    "static/js/2.45c466fc.chunk.js.LICENSE.txt": "/faceit-tracker/static/js/2.45c466fc.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/faceit-tracker/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ee53e5f5.js",
+    "static/js/2.45c466fc.chunk.js",
+    "static/css/main.7d180cbf.chunk.css",
+    "static/js/main.8919494b.chunk.js"
+  ]
+}

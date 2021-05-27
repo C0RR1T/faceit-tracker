@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/faceit-tracker/static/css/main.7d180cbf.chunk.css",
-    "main.js": "/faceit-tracker/static/js/main.8919494b.chunk.js",
-    "main.js.map": "/faceit-tracker/static/js/main.8919494b.chunk.js.map",
+    "main.js": "/faceit-tracker/static/js/main.6574a37a.chunk.js",
+    "main.js.map": "/faceit-tracker/static/js/main.6574a37a.chunk.js.map",
     "runtime-main.js": "/faceit-tracker/static/js/runtime-main.ee53e5f5.js",
     "runtime-main.js.map": "/faceit-tracker/static/js/runtime-main.ee53e5f5.js.map",
     "static/js/2.45c466fc.chunk.js": "/faceit-tracker/static/js/2.45c466fc.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.ee53e5f5.js",
     "static/js/2.45c466fc.chunk.js",
     "static/css/main.7d180cbf.chunk.css",
-    "static/js/main.8919494b.chunk.js"
+    "static/js/main.6574a37a.chunk.js"
   ]
 }

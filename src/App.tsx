@@ -1,5 +1,5 @@
 import React from 'react';
-import StatTrack from "./models/StatTrack";
+import StatTrack from "./components/StatTrack";
 import './style/App.scss'
 
 

@@ -19,8 +19,9 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  display: grid;
-  place-items: center;
+}
+
+.error {
+  font-family: sans-serif;
+  color: red;
 }

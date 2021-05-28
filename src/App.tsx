@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import StatTrack from "./models/StatTrack";
+import './style/App.scss'
+
 
 function App() {
     return (
-        <div>
-            <StatTrack/>
-        </div>
+        <StatTrack/>
     );
 }
 

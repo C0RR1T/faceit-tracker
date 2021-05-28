@@ -1,15 +1,26 @@
 .tracker {
+  position: absolute;
+  left: 0;
+  right: 0;
   z-index: 2;
+  height: 100%;
+  width: 100%;
   font-family: sans-serif;
+  color: white;
   p {
-    font-size: 5%;
+    font-size: 50%;
   }
   h1 {
-    font-size: 7.5%;
+    font-size: 75%;
   }
 }
 
-.background-image {
-  z-index: 1;
-
+.stattrack {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
 }

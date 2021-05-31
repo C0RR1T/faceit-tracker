@@ -18,72 +18,11 @@
           "k-d . elo-difference"
           "kills . deaths";
 
-  #name {
-    grid-area: name;
-  }
-
-  #rank {
-    grid-area: faceit-rank;
-  }
-
-  #elo {
-    grid-area: elo;
-  }
-
-  #elo-today {
-    grid-area: elo-today;
-  }
-
-  #win-streak {
-    grid-area: current-winstreak;
-  }
-
-  #total-matches {
-    grid-area: total-matches;
-  }
-
-  #win-rate {
-    grid-area: win-percentage;
-  }
-
-  #last-match {
-    grid-area: last-game;
-  }
-
-  #map {
-    grid-area: map;
-  }
-
-  #result {
-    grid-area: result;
-  }
-
-  #score {
-    grid-area: score;
-  }
-
-  #k-d {
-    grid-area: k-d;
-  }
-
-  #elo-diff {
-    grid-area: elo-difference;
-  }
-
-  #kill {
-    grid-area: kills;
-  }
-
-  #death {
-    grid-area: deaths;
-  }
 
   p, h1, h2 {
     color: white;
   }
 }
-
-
 
 
 .stat-track {
@@ -99,4 +38,64 @@
   p, h1, h2 {
     color: red;
   }
+}
+
+#name {
+  grid-area: name;
+}
+
+#rank {
+  grid-area: faceit-rank;
+}
+
+#elo {
+  grid-area: elo;
+}
+
+#elo-today {
+  grid-area: elo-today;
+}
+
+#win-streak {
+  grid-area: current-winstreak;
+}
+
+#total-matches {
+  grid-area: total-matches;
+}
+
+#win-rate {
+  grid-area: win-percentage;
+}
+
+#last-match {
+  grid-area: last-game;
+}
+
+#map {
+  grid-area: map;
+}
+
+#result {
+  grid-area: result;
+}
+
+#score {
+  grid-area: score;
+}
+
+#k-d {
+  grid-area: k-d;
+}
+
+#elo-diff {
+  grid-area: elo-difference;
+}
+
+#kill {
+  grid-area: kills;
+}
+
+#death {
+  grid-area: deaths;
 }

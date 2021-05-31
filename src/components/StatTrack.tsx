@@ -1,21 +1,47 @@
 import UserService from "../api/UserService";
 import "../style/Tracker.scss";
 import React, {useEffect, useState} from "react";
+import Stats from "../models/Stats";
 
-let userService: UserService;
 const params = new URLSearchParams(window.location.search);
 const background = (params.get('background') || '"https://upload.wikimedia.org/wikipedia/commons/9/95/Black_Colour.svg"').replaceAll('"', "");
 const value = ((params.get("circular") === "true") ? '50' : '0');
 const userName = params.get('username');
 
-const StatTrack: React.FunctionComponent<{}> = () => {
-    let componentState = useState();
-    let [setState, state] = componentState;
+const StatTrack: React.FunctionComponent = () => {
+    let [state, setState] = useState<Stats>({
+        "Faceit-Api": {
+            "name": "",
+            "elo": 0,
+            "rank": 0,
+            "Elo Today": 0,
+            "Win Streak": "",
+            "Total Matches": "",
+            "Matches Won": "",
+            "Win": 0,
+            "Loss": 0,
+            "Last Game": {
+                "Map": "",
+                "Result": "",
+                "Score": "",
+                "K/D": "",
+                "Elo Diff": 0,
+                "Kills": 0,
+                "Deaths": 0
+            }
+        }
+    });
     useEffect(() => {
         if (userName)
-            userService = new UserService(userName, componentState)
+            new UserService(userName, state, setState)
     }, []);
-    if(userName) {
+
+    let winrate = 0;
+    if (state["Faceit-Api"])
+        winrate = Math.round((parseInt(state["Faceit-Api"]['Matches Won']) / parseInt(state["Faceit-Api"]["Total Matches"])) * 100) || 0;
+    const mapPlayed = state["Faceit-Api"]["Last Game"].Map.charAt(0).toUpperCase() + state["Faceit-Api"]["Last Game"].Map.slice(1);
+
+    if (userName && state["Faceit-Api"]) {
         return (
 
             <div className="stattrack" style={{
@@ -25,10 +51,21 @@ const StatTrack: React.FunctionComponent<{}> = () => {
                 borderRadius: `${value}%`
             }}>
                 <div className="tracker">
-                    <h1>Name: C0RR1T</h1>
-                    <p>Faceit rank: 10</p>
-                    <p>Elo: 1000</p>
-                    <p>Elo gained today: +32</p>
+                    <h1 className={"name"}>Name: {state["Faceit-Api"].name || ""}</h1>
+                    <p className={"rank"}>Faceit rank: {state["Faceit-Api"].rank || ""}</p>
+                    <p className={"elo"}>Elo: {state["Faceit-Api"].elo || ""}</p>
+                    <p className={"elo-today"}>Elo gained today: {state["Faceit-Api"]["Elo Today"] || 0}</p>
+                    <p className={"win-streak"}>Winstreak: {state["Faceit-Api"]["Win Streak"] || ""}</p>
+                    <p className={"total-matches"}>Matches played: {state["Faceit-Api"]["Total Matches"] || ""}</p>
+                    <p className={"win-rate"}>Winrate: {winrate || ""} %</p>
+                    <h2 className={"last-match"}>Last Match</h2>
+                    <p className={"map"}>Map played: {mapPlayed || ""}</p>
+                    <p className={"result"}>Result: {state["Faceit-Api"]["Last Game"].Result || ""}</p>
+                    <p className={"score"}>Score: {state["Faceit-Api"]["Last Game"].Score || ""}</p>
+                    <p className={"k-d"}>K/D: {state["Faceit-Api"]["Last Game"]["K/D"]}</p>
+                    <p className={"elo-diff"}>Elo difference: {state["Faceit-Api"]["Last Game"]["Elo Diff"] || ""}</p>
+                    <p className={"kill"}>Kills: {state["Faceit-Api"]["Last Game"].Kills || ""}</p>
+                    <p className={"death"}>Deaths: {state["Faceit-Api"]["Last Game"].Deaths || ""}</p>
                 </div>
             </div>
 
@@ -38,7 +75,7 @@ const StatTrack: React.FunctionComponent<{}> = () => {
             <div className="error">
                 <h1>Hello there</h1>
                 <p>Please insert your FACEIT-Username in the Parameters. If you don't know how to do it, take a look
-                    at <a href="https://github.com/C0RR1T/faceit-tracker">The Github Repository</a> </p>
+                    at <a href="https://github.com/C0RR1T/faceit-tracker">The Github Repository</a></p>
             </div>
         )
     }

@@ -1,52 +1,31 @@
-import React, {Dispatch} from "react";
+import {Dispatch} from "react";
 import axios from "./AxiosUtility";
-import Player from "../models/Player";
+import Stats from "../models/Stats";
 
 export default class UserService {
     private _username: string;
-    private _state: [undefined, Dispatch<any>];
-    private _playerID: string = "";
+    private _state: Stats;
+    private _setState: Dispatch<Stats>
 
-    constructor(username: string, state: [undefined, Dispatch<any>]) {
+    constructor(username: string, state: Stats, setState: Dispatch<Stats>) {
         this._state = state;
+        this._setState = setState;
         this._username = username;
-        this.getPlayerID();
+        this.getStats();
+        this.getStatsInterval();
     }
 
-    private getPlayerID = () => {
-        axios.get(`players?nickname=${this._username}&game=csgo`).then(r => {
-            let s: Player = r.data;
-            this._playerID = s.player_id;
-            console.log(this._playerID)
-        }).catch(error => {
-            let errorString: string;
-            switch (error.status) {
-                case 400: {
-                    errorString = "Error with API"
-                    break;
-                }
-                case 401: {
-                    errorString = "API Key is not valid anymore. Please send a Message to C0RR1T_#1855 on Discord";
-                    break;
-                }
-                case 404: {
-                    errorString = "Username not found";
-                    break;
-                }
-                case 429: {
-                    errorString = "You're sending to many requests. Please try again later";
-                    break;
-                }
-                case 503: {
-                    errorString = "Data is currently not available, please try again later";
-                    break;
-                }
-                default: {
-                    errorString = "General Error with API, please try again later"
-                }
-            }
-            console.error(errorString);
-        })
+    private getStatsInterval = () => {
+        setInterval(() => {
+            this.getStats();
+        }, 600000);
+    }
+
+    private getStats = () => {
+        console.trace('Getting stats..');
+        axios.get<Stats>(`${this._username}/d`).then(r => {
+            this._setState(r.data);
+        }).catch(e => this.errorHandling(e));
     }
 
 
@@ -58,8 +37,34 @@ export default class UserService {
         this._username = value;
     }
 
-
-    get state(): [undefined, React.Dispatch<any>] {
-        return this._state;
+    private errorHandling = (error: any) => {
+        console.error(error);
+        let errorString: string;
+        switch (error.response.status) {
+            case 400: {
+                errorString = "Error with API"
+                break;
+            }
+            case 401: {
+                errorString = "API Key is not valid anymore. Please send a Message to C0RR1T_#1855 on Discord";
+                break;
+            }
+            case 404: {
+                errorString = "Username not found";
+                break;
+            }
+            case 429: {
+                errorString = "You're sending to many requests. Please try again later";
+                break;
+            }
+            case 503: {
+                errorString = "Data is currently not available, please try again later";
+                break;
+            }
+            default: {
+                errorString = "General Error with API, please try again later"
+            }
+        }
+        console.error(errorString);
     }
 }

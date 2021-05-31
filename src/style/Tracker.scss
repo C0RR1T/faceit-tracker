@@ -1,23 +1,91 @@
 .tracker {
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  height: 100%;
-  width: 100%;
   font-family: sans-serif;
+  height: 100%;
   color: white;
-  p {
-    font-size: 50%;
-  }
-  h1 {
-    font-size: 75%;
-  }
+  text-align: center;
+  display: grid;
+  grid-template-columns: 45vw 10vw 45vw;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-areas:
+          "name name name"
+          "faceit-rank faceit-rank faceit-rank"
+          "elo elo elo"
+          "elo-today elo-today elo-today"
+          "current-winstreak current-winstreak current-winstreak"
+          "total-matches total-matches total-matches"
+          "win-percentage win-percentage"
+          "last-game last-game last-game"
+          "map result score"
+          "k-d . elo-difference"
+          "kills . deaths";
+
 }
+
+.name {
+  grid-area: name;
+}
+
+.rank {
+  grid-area: faceit-rank;
+}
+
+.elo {
+  grid-area: elo;
+}
+
+.elo-today {
+  grid-area: elo-today;
+}
+
+.win-streak {
+  grid-area: current-winstreak;
+}
+
+.total-matches {
+  grid-area: total-matches;
+}
+
+.win-rate {
+  grid-area: win-percentage;
+}
+
+.last-match {
+  grid-area: last-game;
+}
+
+.map {
+  grid-area: map;
+}
+
+.result {
+  grid-area: result;
+}
+
+.score {
+  grid-area: score;
+}
+
+.k-d {
+  grid-area: k-d;
+}
+
+.elo-diff {
+  grid-area: elo-difference;
+}
+
+.kill {
+  grid-area: kills;
+}
+
+.death {
+  grid-area: deaths;
+}
+
 
 .stattrack {
   background-position: center center;
   background-size: cover;
+  height: 100%;
   background-repeat: no-repeat;
 }
 

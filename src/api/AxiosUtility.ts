@@ -1,12 +1,8 @@
 import axios, {AxiosInstance} from "axios";
-import KEY from "./SECRETS";
 
-const BASE_URL = 'https://open.faceit.com/data/v4/'
+const BASE_URL = 'https://illupy.ch:5000/api/v1/csgo/faceit/user/'
 const defaultAxiosInstance: AxiosInstance = axios.create({
     baseURL: BASE_URL,
-    headers: {
-        Authorization: `Bearer ${KEY}`
-    }
 });
 
 export default defaultAxiosInstance;

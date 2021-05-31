@@ -34,6 +34,7 @@ const StatTrack: React.FunctionComponent = () => {
     useEffect(() => {
         if (userName)
             new UserService(userName, state, setState)
+        // eslint-disable-next-line
     }, []);
 
     let winrate = 0;
@@ -75,7 +76,8 @@ const StatTrack: React.FunctionComponent = () => {
             <div id="error">
                 <h1>Hello there</h1>
                 <p>Please insert your FACEIT-Username in the Parameters. If you don't know how to do it, take a look
-                    at <a href="https://github.com/C0RR1T/faceit-tracker" target={"_blank"} rel={"noreferrer"}>The Github Repository</a></p>
+                    at <a href="https://github.com/C0RR1T/faceit-tracker" target={"_blank"} rel={"noreferrer"}>The
+                        Github Repository</a></p>
             </div>
         )
     }

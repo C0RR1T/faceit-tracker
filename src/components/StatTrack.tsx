@@ -44,35 +44,35 @@ const StatTrack: React.FunctionComponent = () => {
     if (userName && state["Faceit-Api"]) {
         return (
 
-            <div className="stattrack" style={{
+            <div className="stat-track" style={{
                 backgroundImage: `url(${background})`,
                 height: '100%',
                 width: '100%',
                 borderRadius: `${value}%`
             }}>
-                <div className="tracker">
-                    <h1 className={"name"}>Name: {state["Faceit-Api"].name || ""}</h1>
-                    <p className={"rank"}>Faceit rank: {state["Faceit-Api"].rank || ""}</p>
-                    <p className={"elo"}>Elo: {state["Faceit-Api"].elo || ""}</p>
-                    <p className={"elo-today"}>Elo gained today: {state["Faceit-Api"]["Elo Today"] || 0}</p>
-                    <p className={"win-streak"}>Winstreak: {state["Faceit-Api"]["Win Streak"] || ""}</p>
-                    <p className={"total-matches"}>Matches played: {state["Faceit-Api"]["Total Matches"] || ""}</p>
-                    <p className={"win-rate"}>Winrate: {winrate || ""} %</p>
-                    <h2 className={"last-match"}>Last Match</h2>
-                    <p className={"map"}>Map played: {mapPlayed || ""}</p>
-                    <p className={"result"}>Result: {state["Faceit-Api"]["Last Game"].Result || ""}</p>
-                    <p className={"score"}>Score: {state["Faceit-Api"]["Last Game"].Score || ""}</p>
-                    <p className={"k-d"}>K/D: {state["Faceit-Api"]["Last Game"]["K/D"]}</p>
-                    <p className={"elo-diff"}>Elo difference: {state["Faceit-Api"]["Last Game"]["Elo Diff"] || ""}</p>
-                    <p className={"kill"}>Kills: {state["Faceit-Api"]["Last Game"].Kills || ""}</p>
-                    <p className={"death"}>Deaths: {state["Faceit-Api"]["Last Game"].Deaths || ""}</p>
+                <div id="tracker">
+                    <h1 id={"name"}>Name: {state["Faceit-Api"].name || ""}</h1>
+                    <p id={"rank"}>Faceit rank: {state["Faceit-Api"].rank || ""}</p>
+                    <p id={"elo"}>Elo: {state["Faceit-Api"].elo || ""}</p>
+                    <p id={"elo-today"}>Elo gained today: {state["Faceit-Api"]["Elo Today"] || 0}</p>
+                    <p id={"win-streak"}>Winstreak: {state["Faceit-Api"]["Win Streak"] || ""}</p>
+                    <p id={"total-matches"}>Matches played: {state["Faceit-Api"]["Total Matches"] || ""}</p>
+                    <p id={"win-rate"}>Winrate: {winrate || ""} %</p>
+                    <h2 id={"last-match"}>Last Match</h2>
+                    <p id={"map"}>Map played: {mapPlayed || ""}</p>
+                    <p id={"result"}>Result: {state["Faceit-Api"]["Last Game"].Result || ""}</p>
+                    <p id={"score"}>Score: {state["Faceit-Api"]["Last Game"].Score || ""}</p>
+                    <p id={"k-d"}>K/D: {state["Faceit-Api"]["Last Game"]["K/D"]}</p>
+                    <p id={"elo-diff"}>Elo difference: {state["Faceit-Api"]["Last Game"]["Elo Diff"] || ""}</p>
+                    <p id={"kill"}>Kills: {state["Faceit-Api"]["Last Game"].Kills || ""}</p>
+                    <p id={"death"}>Deaths: {state["Faceit-Api"]["Last Game"].Deaths || ""}</p>
                 </div>
             </div>
 
         )
     } else {
         return (
-            <div className="error">
+            <div id="error">
                 <h1>Hello there</h1>
                 <p>Please insert your FACEIT-Username in the Parameters. If you don't know how to do it, take a look
                     at <a href="https://github.com/C0RR1T/faceit-tracker">The Github Repository</a></p>

@@ -1,11 +1,10 @@
-.tracker {
+#tracker {
   font-family: sans-serif;
   height: 100%;
-  color: white;
   text-align: center;
   display: grid;
   grid-template-columns: 45vw 10vw 45vw;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-rows: repeat(11, auto);
   grid-template-areas:
           "name name name"
           "faceit-rank faceit-rank faceit-rank"
@@ -19,70 +18,75 @@
           "k-d . elo-difference"
           "kills . deaths";
 
+  #name {
+    grid-area: name;
+  }
+
+  #rank {
+    grid-area: faceit-rank;
+  }
+
+  #elo {
+    grid-area: elo;
+  }
+
+  #elo-today {
+    grid-area: elo-today;
+  }
+
+  #win-streak {
+    grid-area: current-winstreak;
+  }
+
+  #total-matches {
+    grid-area: total-matches;
+  }
+
+  #win-rate {
+    grid-area: win-percentage;
+  }
+
+  #last-match {
+    grid-area: last-game;
+  }
+
+  #map {
+    grid-area: map;
+  }
+
+  #result {
+    grid-area: result;
+  }
+
+  #score {
+    grid-area: score;
+  }
+
+  #k-d {
+    grid-area: k-d;
+  }
+
+  #elo-diff {
+    grid-area: elo-difference;
+  }
+
+  #kill {
+    grid-area: kills;
+  }
+
+  #death {
+    grid-area: deaths;
+  }
+
+  p, h1, h2 {
+    color: white;
+  }
 }
 
-.name {
-  grid-area: name;
-}
-
-.rank {
-  grid-area: faceit-rank;
-}
-
-.elo {
-  grid-area: elo;
-}
-
-.elo-today {
-  grid-area: elo-today;
-}
-
-.win-streak {
-  grid-area: current-winstreak;
-}
-
-.total-matches {
-  grid-area: total-matches;
-}
-
-.win-rate {
-  grid-area: win-percentage;
-}
-
-.last-match {
-  grid-area: last-game;
-}
-
-.map {
-  grid-area: map;
-}
-
-.result {
-  grid-area: result;
-}
-
-.score {
-  grid-area: score;
-}
-
-.k-d {
-  grid-area: k-d;
-}
-
-.elo-diff {
-  grid-area: elo-difference;
-}
-
-.kill {
-  grid-area: kills;
-}
-
-.death {
-  grid-area: deaths;
-}
 
 
-.stattrack {
+
+.stat-track {
   background-position: center center;
   background-size: cover;
   height: 100%;
@@ -91,5 +95,8 @@
 
 .error {
   font-family: sans-serif;
-  color: red;
+
+  p, h1, h2 {
+    color: red;
+  }
 }
